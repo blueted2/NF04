@@ -1,0 +1,6 @@
+bien gérer les erreurs (position dans le fichier, donner le plus d'explications possibles)
+
+coloration syntaxique
+débogueur
+interface web - executer le code directement dans le naviguateur / voir l'equivalent du code en C
+https://github.com/kazzkiq/CodeFlask
