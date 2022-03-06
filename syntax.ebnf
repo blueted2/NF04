@@ -1,0 +1,26 @@
+(* remarque: les mots-clés peuvent être en majuscules ou minuscules ou une combinaison des deux 
+    "tant que" ~ "TANT QUE" ~ "Tant Que" (ou meme "tAnT qUe")
+*)
+
+(*
+(...) -> groupement
+[...] -> optionnel
+{...} -> répété entre 0 (inclus) et n fois
+..|.. -> ou
+..,.. -> concaténation                        ex: "test" ~ 't', 'e', 's', 't'
+*)
+
+
+affectation = variable '<-' expression;
+instruction = affectation | expression | boucle_pour | boucle_tant_que;
+liste_instructions = instruction {instruction}; (* il faut au minimum une instruction *)
+
+fin_expr_boucle = ["faire"] ':';
+
+debut_expr_tq = ("tant" "que") | "tq";
+fin_boucle_tq = "fin" ["tq" | ("tant" "que")];
+boucle_tant_que = debut_tq expression fin_expr_boucle liste_instructions fin_boucle_tq;
+
+ppd = ("par" "pas" "de") | "ppd" expression;
+fin_boucle_pour = "fin" ["pour"];
+boucle_pour = "pour" variable ["allant"] "de" expression 'a' expression [ ppd ] fin_expr_boucle liste_instructions fin_boucle_pour;
