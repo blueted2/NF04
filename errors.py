@@ -20,9 +20,9 @@ class Error:
         return result
 
 class IllegalCharError(Error):
-	def __init__(self, start_pos, end_pos, details):
+	def __init__(self, start_pos: Position, end_pos: Position, details: str):
 		super().__init__('Illegal Character', start_pos, end_pos, details)
 
 class InvalidSyntaxError(Error):
-    def __init__(self, start_pos, end_pos, details):
+    def __init__(self, start_pos: Position, end_pos: Position, details: str):
         super().__init__('Invalid Syntax Error', start_pos, end_pos, details)

@@ -1,0 +1,4 @@
+variables:
+    a, : pointeur entier
+    b : pointeur vers pointeur vers pointeur vers pointeur reel
+    

@@ -8,16 +8,13 @@ class Position:
     file_contents: str
     filename: str = "<unnamed>"
 
-    def advance(self, current_char=None):
-        self.index += 1
-        self.column += 1
+    def next(self, current_char=None):
+        index = self.index + 1
+        column = self.column + 1
+        line = self.line
 
         if current_char == "\n":
-            self.line += 1
-            self.column = 0
+            line += 1
+            column = 0
 
-        return self
-
-    def copy(self):
-        return Position(self.index, self.line, self.column, self.file_contents, self.filename)
-    
+        return Position(index, line, column, self.file_contents, self.filename)

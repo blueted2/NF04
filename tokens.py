@@ -1,19 +1,14 @@
+from typing import Optional
 from position import Position
+from token_types import TT_LITERAL
 
 
 class Token:
-    def __init__(self, token_type: str, start_pos: Position, end_pos: Position = None):
+    def __init__(self, token_type: str, value: str, start_pos: Position, end_pos: Optional[Position] = None):
         self.token_type = token_type
-        self.start_pos = start_pos.copy()
-        self.end_pos = end_pos.copy() if end_pos is not None else start_pos.copy().advance()
+        self.value = value
+        self.start_pos = start_pos
+        self.end_pos = end_pos if end_pos is not None else start_pos.next()
     
     def __repr__(self):
-        return f"{self.token_type}"
-
-class ValueToken(Token):
-    def __init__(self, token_type: str, value: str, start_pos: Position, end_pos: Position = None):
-        super().__init__(token_type, start_pos, end_pos)
-        self.value = value
-
-    def __repr__(self):
-        return f"{self.token_type}: {self.value}"
+        return f"({self.token_type}: {repr(self.value)})"

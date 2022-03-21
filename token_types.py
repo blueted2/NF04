@@ -1,36 +1,33 @@
-TT_FLOAT   = "float"
-TT_INT     = "int"
-TT_PLUS    = "plus"
-TT_MINUS   = "minus"
-TT_MUL     = "mul"
-TT_DIV     = "div"
-TT_L_PAREN = "l_paren"
-TT_R_PAREN = "r_paren"
-TT_LT      = "lt"
-TT_GT      = "gt"
-TT_EQUALS  = "equals"
-TT_IDENT   = "ident"
-TT_KEYWORD = "keyword"
-TT_EOF     = "eof"
+TT_IDENTIFIER = "id"
+TT_KEYWORD    = "key"
+TT_SEPERATOR  = "sep"
+TT_OPERATOR   = "ope"
+TT_LITERAL    = "lit"
+TT_COMMENT    = "cm"
+TT_EOF        = "eof"
 
-SINGLE_CHAR_TOKENS = {
-    "+": TT_PLUS,
-    "-": TT_MINUS,
-    "*": TT_MUL,
-    "/": TT_DIV,
-    "(": TT_L_PAREN,
-    ")": TT_R_PAREN,
-    "<": TT_LT,
-    ">": TT_GT,
-    "=": TT_EQUALS
-}
+LIT_DECIMAL   = "lit_decimal"
+LIT_WHOLE     = "lit_whole"
+LIT_STRING    = "lit_string"
+
+OPERATORS = [ "+", "-", "*", "/", "<", ">", "=" ]
+SEPERATORS = [ "(", ")", ":", "\n", ","]
+
+LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+NUMBERS = "0123456789"
+WHITESPACE = ' \t\r'
 
 KEYWORDS = [
+    "entier",
+    "reel",
     "pour",
     "allant",
     "de",
     "par",
     "pas",
     "de",
-    "faire"
+    "faire",
+    "variables",
+    "pointeur",
+    "vers"
 ]
